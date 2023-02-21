@@ -8,8 +8,24 @@
     margin: 15px 15px;
     border-radius: 20px;
     height: 280px;
-    width: 285px;
-   
+    width: 340px;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.025);
+      transition: 0.18s;
+      cursor: pointer;
+    }
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+      -moz-transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      transform: scale(1.025);
+      transition: 0.18s;
+    }
 
     &__texto {
         display: flex;

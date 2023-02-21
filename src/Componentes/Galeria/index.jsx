@@ -1,52 +1,39 @@
 import Cards from "../Cards";
-import Foto1 from '../../assets/imagens/galeria/foto-1.png';
-import Foto2 from '../../assets/imagens/galeria/foto-2.png';
-import Foto3 from '../../assets/imagens/galeria/foto-3.png';
-import Foto4 from '../../assets/imagens/galeria/foto-4.png';
-import Foto5 from '../../assets/imagens/galeria/foto-5.png';
-import Foto6 from '../../assets/imagens/galeria/foto-6.png';
 import styles from "./Galeria.module.scss";
-import Tags from "../Tags";
-
-const info = [
-    {
-        imagem: Foto1,
-        nome: "galáxia",
-        fonte: "Alura"
-    },
-    {
-        imagem: Foto2,
-        nome: "lua",
-        fonte: "Alura"
-    },
-    {
-        imagem: Foto3,
-        nome: "terra",
-        fonte: "Alura"
-    },
-    {
-        imagem: Foto4,
-        nome: "nuvem",
-        fonte: "Alura"
-    },
-    {
-        imagem: Foto5,
-        nome: "meteoro",
-        fonte: "Alura"
-    },
-    {
-        imagem: Foto6,
-        nome: "nuvem",
-        fonte: "Alura"
-    }
-]
+import info from "../Cards/Informacoes";
+import infoImagem from "../Populares/ImgPopulares";
+import Populares from "../Populares/Populares";
+import { filtrar } from "../../service";
+import { useState } from "react";
 
 export default function Galeria() {
+    const [informacao, setInformacao] = useState(info);
+
     return(
         <section className={styles.galeria}>
-            <div><Tags /></div>
-            <div className={styles.galeria__cards}>
-                {info.map(item => <Cards nome={item.nome} imagem={item.imagem} fonte={item.fonte} key={item.nome}/>)}
+            <div className={styles.galeria__tag}>
+                <h1>Navegue pela galeria</h1>
+            <div className={styles.galeria__tagbotoes}>   
+                <p>Busque por tags:</p>
+                <div>
+                    <button onClick={() => setInformacao(filtrar(info, "Estrelas"))}>Estrelas</button>
+                    <button onClick={() => setInformacao(filtrar(info, "Galáxias"))}>Galáxias</button>
+                    <button onClick={() => setInformacao(filtrar(info, "Lua"))}>Lua</button>
+                    <button onClick={() => setInformacao(filtrar(info, "Planetas"))}>Planetas</button>
+                </div>
+            </div> 
+            </div>
+            <div className={styles.galeria__main}>
+                <div className={styles.galeria__cards}>
+                    {informacao.map(item => <Cards nome={item.nome} imagem={item.imagem} fonte={item.fonte} key={item.id}/>)}
+                </div>
+                <div className={styles.galeria__populares}>
+                    <h2>Populares</h2>
+                    {infoImagem.map(item => <Populares imagem={item.imagem} alt={item.alt} key={item.id}/>)}
+                    <div className={styles.populares__button}>
+                        <button>Ver mais</button>
+                    </div>
+                </div>
             </div>
         </section>
     )
