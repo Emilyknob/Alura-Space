@@ -1,0 +1,12 @@
+@import "../../styles/variaveis";
+
+.galeria {
+    padding-left: 16%;
+    margin-bottom: 10vh;
+    
+    &__cards{
+        display: flex;
+        flex-wrap: wrap;
+        width: 75%;
+    }
+}

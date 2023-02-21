@@ -1,0 +1,39 @@
+@import "../../styles/variaveis";
+
+.tag {
+    margin-left: 2vh;
+    margin-top: 10vh;
+
+    button {
+        font-family: $fonte-normal;
+        list-style: none;
+        background-color: $tag-color;
+        font-size: 24px;
+        color: $cor-do-texto;
+        border-radius: 5px;
+        width: 11vh;
+        height: 5vh;
+        border-style: none;
+        margin-right: 5vh;
+    }
+
+    &__botoes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-family: $fonte-normal;
+        font-size: 24px;
+        margin: 0;
+        color: $cor-do-texto;
+    }
+    
+    h1 {
+        font-family: $fonte-bold;
+        color: $roxo;
+        font-size: 32px;
+    }
+}

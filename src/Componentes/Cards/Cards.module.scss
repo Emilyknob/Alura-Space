@@ -1,0 +1,40 @@
+@import "../../styles/variaveis";
+
+.card {
+    font-family: $fonte-normal;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $azul-escuro;
+    margin: 15px 15px;
+    border-radius: 20px;
+    height: 280px;
+    width: 285px;
+   
+
+    &__texto {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $branco;
+        padding: 0 15px;
+    }
+
+    &__img {
+        height: 75%;
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 20px;
+        margin: 0%;
+    }
+
+    p {
+        font-size: 15px;
+        margin: 10px 0;
+    }
+
+    &__icone {
+        font-size: 25px;
+    }
+}
