@@ -4,7 +4,7 @@ import info from "../Cards/Informacoes";
 import infoImagem from "../Populares/ImgPopulares";
 import Populares from "../Populares/Populares";
 import { filtrar } from "../../service";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Galeria() {
     const [informacao, setInformacao] = useState(info);
