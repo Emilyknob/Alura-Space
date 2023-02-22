@@ -25,7 +25,14 @@ export default function Galeria() {
             </div>
             <div className={styles.galeria__main}>
                 <div className={styles.galeria__cards}>
-                    {informacao.map(item => <Cards nome={item.nome} imagem={item.imagem} fonte={item.fonte} key={item.id}/>)}
+                    {informacao.map(item => <Cards 
+                        key={item.id}
+                        nome={item.nome} 
+                        imagem={item.imagem} 
+                        fonte={item.fonte} 
+                        favorito={item.favorito} 
+                        id={item.id}
+                        setInfo={setInformacao}/>)}
                 </div>
                 <div className={styles.galeria__populares}>
                     <h2>Populares</h2>
