@@ -15,6 +15,7 @@ export function click(id, info){
                 item.favorito = false;
             }
         }
+        return item;
     })
-    console.log(cardFavoritado);
+    return cardFavoritado;
 }

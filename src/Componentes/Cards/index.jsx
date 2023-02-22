@@ -11,8 +11,6 @@ export default function Cards(props) {
         click(props.id, info);
     }
 
-    
-
     return(
         <section className={styles.card}>
             <img className={styles.card__img} src={props.imagem} alt={props.nome}/>
