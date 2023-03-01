@@ -2,13 +2,12 @@ import styles from "./Cards.module.scss";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
 import { TbArrowsDiagonal } from "react-icons/tb";
-import { useState } from "react";
 import { click } from "../../service";
 import info from "./Informacoes";
 
 export default function Cards(props) {
     function favoritar() {
-        click(props.id, info);
+        props.setInfo(click(props.id, info));
     }
 
     return(
@@ -20,7 +19,7 @@ export default function Cards(props) {
                     <p>{props.fonte}</p>
                 </div>
                 <div className={styles.card__icone}>
-                    <AiOutlineHeart onClick={favoritar}></AiOutlineHeart>
+                    {!props.favorito ? <AiOutlineHeart onClick={favoritar}></AiOutlineHeart> : <AiFillHeart onClick={favoritar}></AiFillHeart>}
                     <TbArrowsDiagonal/>
                  </div>
              </div> 
